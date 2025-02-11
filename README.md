@@ -16,7 +16,7 @@
 - **Recommendation Algorithms**:  
   - **Python FastAPI**: Fast and efficient API framework to serve machine learning recommendation models.  
 - **Database**:  
-  - **Prisma Client**: To connect and interact with the database (PostgreSQL).  
+  - **Prisma Client**: To connect and interact with the database.  
   - **Azure Data Studio**: To manage and analyze the backend data.  
 - **Testing & Optimization**:  
   - **A/B Testing**: Comparing user interfaces for guest and registered users for better user experience.  
@@ -29,7 +29,7 @@
    - Movie metadata (genre, year, director, etc.) is also stored and used for better recommendations.  
 
 2. **Recommendation Algorithm**:  
-   - The system uses deep learning models, such as **Collaborative Filtering**, to make personalized movie recommendations.  
+   - The system uses deep learning models, such as **Collaborative Filtering**,**Content-based filtering** to make personalized movie recommendations.  
    - The **FastAPI** service is responsible for running the recommendation algorithms.  
 
 3. **User Interfaces**:  
