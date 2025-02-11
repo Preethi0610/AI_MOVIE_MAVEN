@@ -1,0 +1,295 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black; /* Black background for the page */
+    color: white; /* White text color for readability */
+}
+
+.welcome-title {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 20px 0;
+    color: red;
+    text-align: left;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #444;
+    font-family: "times new roman";
+    font-weight: bold;
+    color: red;
+}
+
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.hamburger-icon {
+    cursor: pointer;
+}
+
+/* Guest Recommendation Page */
+.guest-recommendation-page {
+    padding: 20px;
+}
+
+/* Section Styles */
+.section {
+    margin: 40px 0;
+    font-family: "times new roman";
+    font-weight: bold;
+
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Content Slider */
+.content-slider {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+    padding: 10px;
+}
+
+.content-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.content-slider::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.content-slider::-webkit-scrollbar-track {
+    background: #333;
+}
+
+/* Card Styles */
+.card {
+    width: 200px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    background-color: #1c1c1c; /* Slightly lighter black for contrast */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.card-image {
+    width: 100%;
+    height: 70%; /* 70% height for the image */
+    object-fit: cover; 
+}
+
+.card-overlay {
+    padding: 10px;
+    height: 30%; /* Remaining height for text content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    margin: 5px 0;
+    color: white; /* Ensure text is visible */
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #a9a9a9; /* Lighter gray for subtitles */
+}
+
+/* Guest Display Page Styles */
+.guest-display-content {
+    text-align: center;
+    padding: 20px;
+    font-family: "times new roman";
+}
+
+.guest-display-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.guest-display-content p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    display: none;
+    flex-direction: column;
+}
+
+.sidebar.open {
+    display: flex;
+}
+
+.sidebar-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-links li {
+    padding: 10px;
+}
+
+.sidebar-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Message Styles */
+.message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .card {
+        width: 150px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+.message {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: #4b0082; 
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    font-weight: bold;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 420px;
+    width: 100%;
+    animation: bounceIn 0.7s ease-out;
+  }
+  
+  .message .close-btn {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #ff6f61; 
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message .close-btn:hover {
+    background-color: #ff4f42; 
+  }
+  
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-30px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(10px);
+    }
+    70% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  

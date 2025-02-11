@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model movie_ratings {
+  rating_id Int      @id(map: "PK__movie_ra__D35B278B11AFAC95") @default(autoincrement())
+  user_id   Int?
+  movie_id  Int?
+  rating    Decimal? @db.Decimal(3, 2)
+  movies    movies?  @relation(fields: [movie_id], references: [movie_id], onDelete: NoAction, onUpdate: NoAction, map: "FK__movie_rat__movie__49C3F6B7")
+  users     users?   @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK__movie_rat__user___48CFD27E")
+}
+
+model movies {
+  movie_id          Int                 @id(map: "PK__movies__83CDF74984CE9F27") @default(autoincrement())
+  title             String?             @db.VarChar(255)
+  genre             String?             @db.VarChar(100)
+  overview          String?             @db.Text
+  release_year      Int?
+  poster_image_url  String?             @db.VarChar(255)
+  movie_ratings     movie_ratings[]
+  user_interactions user_interactions[]
+}
+
+model moviess {
+  movie_id     Int    @id(map: "PK__moviess__83CDF74941062B43") @default(autoincrement())
+  title        String @db.VarChar(255)
+  genre        String @db.VarChar(100)
+  image        String @db.VarChar(255)
+  description  String @db.Text
+  release_year Int
+}
+
+model user_interactions {
+  interaction_id   Int       @id(map: "PK__user_int__605F8FE61EE2F219") @default(autoincrement())
+  user_id          Int?
+  movie_id         Int?
+  interaction_type String?   @db.VarChar(50)
+  timestamp        DateTime? @default(now(), map: "DF__user_inte__times__412EB0B6") @db.DateTime
+  movies           movies?   @relation(fields: [movie_id], references: [movie_id], onDelete: NoAction, onUpdate: NoAction, map: "FK__user_inte__movie__4316F928")
+  users            users?    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK__user_inte__user___4222D4EF")
+}
+
+model users {
+  id                Int                 @id(map: "PK__users__3213E83F1BF5AA90") @default(autoincrement())
+  name              String?             @db.VarChar(Max)
+  email             String?             @db.VarChar(Max)
+  password          String?             @db.VarChar(Max)
+  movie_ratings     movie_ratings[]
+  user_interactions user_interactions[]
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model userhistory {
+  id      Int?
+  history Int
+  isliked Boolean
+
+  @@ignore
+}
