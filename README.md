@@ -41,5 +41,10 @@
 
 ## 🚀 How to Run 
 
-###npm run dev  # Start the Next.js application
+npm run dev  
+
+## Run the FastAPI recommendation server
+
+uvicorn recommendation.main:app --reload  
+
 
