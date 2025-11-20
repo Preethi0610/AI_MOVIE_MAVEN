@@ -1,16 +1,16 @@
 # AI Movie Maven  
 
-## 📌 Project Overview  
+## Project Overview  
 **AI Movie Maven** is an AI-powered movie recommendation system designed to offer personalized movie suggestions based on user preferences. It features a seamless user interface for both guest and registered users, with **A/B testing** to compare the performance of different interfaces. The project uses **Next.js** for both frontend and backend development, **Python FastAPI** for running recommendation algorithms, and **Prisma Client** for database management. It integrates with **Azure Data Studio** for managing the backend database.  
 
-## 🏆 Key Features  
+## Key Features  
 - **Personalized Movie Recommendations**: Movie suggestions based on user preferences and interactions.  
 - **Guest & Registered User Interfaces**: Two distinct interfaces are used to provide a better experience for both guest users and registered users.  
 - **A/B Testing**: Allows users to compare and optimize the interface for guest vs. registered users.  
 - **Deep Learning**: The recommendation system uses deep learning models to enhance prediction accuracy.  
 - **Efficient Data Management**: **Prisma Client** is used to interact with the database, ensuring high performance and ease of use.  
 
-## 🛠️ Technologies Used  
+## Technologies Used  
 - **Frontend & Backend**:  
   - **Next.js**: Framework for building both the frontend and backend of the application.  
 - **Recommendation Algorithms**:  
@@ -21,9 +21,9 @@
 - **Testing & Optimization**:  
   - **A/B Testing**: Comparing user interfaces for guest and registered users for better user experience.  
 
-## 📂 Project Structure  
+## Project Structure  
 
-## 📊 Recommendation System  
+## Recommendation System  
 1. **Data Collection**:  
    - User interaction data (ratings, reviews, etc.) is collected and stored in a PostgreSQL database managed with Prisma Client.  
    - Movie metadata (genre, year, director, etc.) is also stored and used for better recommendations.  
@@ -39,7 +39,7 @@
 4. **A/B Testing**:  
    - Two distinct interfaces are provided for guest and registered users to optimize the user experience. A/B testing is used to compare the effectiveness of both interfaces and gather feedback.  
 
-## 🚀 How to Run 
+## How to Run 
 
 npm run dev  
 
