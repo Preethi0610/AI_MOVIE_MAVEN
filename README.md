@@ -1,27 +1,43 @@
-# AI Movie Maven
+# 🎬 AI Movie Maven
 
-## Project Overview
-AI Movie Maven is a full stack, AI powered movie recommendation system built to provide personalized movie suggestions based on user preferences and interaction history. The application supports both guest and registered users and uses A/B testing to evaluate and improve user experience. The web application is developed with Next.js, the recommendation services are implemented in Python using FastAPI, and PostgreSQL is used as the primary database accessed through Prisma. The system is containerized using Docker, and Azure Data Studio is used as a database management and inspection tool.
+> *Because "what should we watch tonight?" deserves a better answer than scrolling for 45 minutes.*
 
-## Key Features
-- Personalized movie recommendations based on user interactions and preferences  
-- Separate experiences for guest users and registered users  
-- A/B testing to compare user flows and interface performance  
-- Machine learning based recommendation models  
-- Database access and management through Prisma with PostgreSQL  
+A full-stack, AI-powered movie recommendation system built for my **Software Engineering** class but built like it actually has to ship.
 
-## Technologies Used
-- Next.js for frontend and backend application development  
-- FastAPI (Python) for serving machine learning and recommendation services  
-- PostgreSQL as the main database  
-- Prisma Client for database access and schema management  
-- Docker for containerizing services and simplifying setup  
-- Azure Data Studio for database monitoring and administration  
+## Overview
+AI Movie Maven serves up personalized movie picks based on what users watch, rate, and click. **Guest users** get to browse without commitment; **registered users** get recommendations that actually know them. **A/B testing** runs quietly in the background, figuring out which experience keeps people watching.
 
-## Recommendation System
-- User interaction data such as ratings and activity is stored in a PostgreSQL database managed using Prisma  
-- Movie metadata including genre and other attributes is used to improve recommendation quality  
-- The recommendation layer uses collaborative filtering and content based approaches, implemented in Python and exposed through FastAPI  
-- Guest users can explore recommendations without an account, while registered users receive personalized results based on their history  
-- A/B testing is used to evaluate and compare the guest and registered user experiences
+Under the hood: **Next.js** for the app, **FastAPI** for the ML, **PostgreSQL + Prisma** for the data, and **Docker** to make sure it runs the same everywhere because "works on my machine" isn't a deliverable.
+
+## Tech Stack
+- **Next.js** : frontend + backend in one
+- **FastAPI (Python)** : serves the recommendation logic
+- **PostgreSQL + Prisma** : data layer with type-safe access
+- **Docker** : reproducible setup, no surprises
+- **Azure Data Studio** : for when the database needs a closer look
+
+## How Recommendations Work
+The engine blends **collaborative filtering** (what similar users liked) with **content-based** signals (genre, metadata, the usual suspects), exposed through FastAPI endpoints. Guest users see general picks; registered users get results shaped by their history. A/B tests compare the two flows to learn what's actually working.
+
+## 🍿 A Peek Inside
+
+A quick walkthrough of Movie Maven in the wild popcorn optional.
+
+### Landing Experience
+<img width="1414" alt="AI Movie Maven landing page" src="https://github.com/user-attachments/assets/3e1628e5-fb94-4209-906b-d1673aaeb941" />
+
+*Where every movie night begins clean entry point for guests and returning users alike.*
+
+<img width="1411" alt="Movie browsing and discovery interface" src="https://github.com/user-attachments/assets/87899c0a-572e-4b13-af92-b457325a8a74" />
+
+<img width="1404" alt="Personalized movie recommendations" src="https://github.com/user-attachments/assets/1411277d-9912-4289-ac43-e861e9ab9677" />
+
+### User Experience in Action
+<img width="1433" alt="Movie Maven user experience" src="https://github.com/user-attachments/assets/e67bcfab-55aa-4e20-98da-a3fb37124caf" />
+
+*A/B testing quietly running in the background the user just gets a better experience.*
+
+*The recommendation engine doing its thing collaborative filtering meets content-based logic.*
+
+
 
